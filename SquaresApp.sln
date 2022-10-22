@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresApp.Storage", "Squar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresApp.Core", "SquaresApp.Core\SquaresApp.Core.csproj", "{8901591B-3934-4B1D-BBD7-2A87C7D25879}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresApp.Tests", "SquaresApp.Tests\SquaresApp.Tests.csproj", "{0A9240C2-62F0-4E93-B155-DBD64677234C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresApp.Models", "SquaresApp.Models\SquaresApp.Models.csproj", "{C4187271-0504-44AA-A395-F28FA5608410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8901591B-3934-4B1D-BBD7-2A87C7D25879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8901591B-3934-4B1D-BBD7-2A87C7D25879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8901591B-3934-4B1D-BBD7-2A87C7D25879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9240C2-62F0-4E93-B155-DBD64677234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9240C2-62F0-4E93-B155-DBD64677234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9240C2-62F0-4E93-B155-DBD64677234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9240C2-62F0-4E93-B155-DBD64677234C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4187271-0504-44AA-A395-F28FA5608410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4187271-0504-44AA-A395-F28FA5608410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4187271-0504-44AA-A395-F28FA5608410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4187271-0504-44AA-A395-F28FA5608410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
