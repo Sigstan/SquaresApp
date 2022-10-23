@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using SquaresApp.Api.Infrastructure.Exceptions;
+using SquaresApp.Core.Services.Points;
 using SquaresApp.Storage.Data;
 
 namespace SquaresApp.Api
@@ -17,8 +19,17 @@ namespace SquaresApp.Api
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<IPointsService, PointsService>();
+            builder.Services.AddMvc(config =>
+                config.Filters.Add(typeof(DomainExceptionFilter)));
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                db.Database.Migrate();
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
