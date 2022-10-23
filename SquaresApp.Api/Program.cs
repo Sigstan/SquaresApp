@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SquaresApp.Api.Infrastructure.Exceptions;
+using SquaresApp.Core.Services.Geometry;
+using SquaresApp.Core.Services.Geometry.Squares;
 using SquaresApp.Core.Services.Points;
 using SquaresApp.Storage.Data;
 
@@ -20,6 +22,8 @@ namespace SquaresApp.Api
 
             builder.Services.AddControllers();
             builder.Services.AddScoped<IPointsService, PointsService>();
+            builder.Services.AddScoped<IGeometryService, SquareService>();
+
             builder.Services.AddMvc(config =>
                 config.Filters.Add(typeof(DomainExceptionFilter)));
 

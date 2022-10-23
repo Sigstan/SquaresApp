@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SquaresApp.Core.Services.Geometry;
 using SquaresApp.Core.Services.Points;
 using PointModel = SquaresApp.Models.Points.PointModel;
 
@@ -9,10 +10,12 @@ namespace SquaresApp.Api.Controllers
     public class PointsController : ControllerBase
     {
         private readonly IPointsService _pointsService;
+        private readonly IGeometryService _geometryService;
 
-        public PointsController(IPointsService pointsService)
+        public PointsController(IPointsService pointsService, IGeometryService squaresService)
         {
             _pointsService = pointsService;
+            _geometryService = squaresService;
         }
 
         [HttpPost]
@@ -36,6 +39,14 @@ namespace SquaresApp.Api.Controllers
         {
             await _pointsService.Delete(batchId, point, cancellationToken);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("{batchId}/identify/squares")]
+        public async Task<IActionResult> IdentifySquares(Guid batchId, CancellationToken cancellationToken)
+        {
+            var squares = await _geometryService.ShapeCount(batchId, cancellationToken);
+            return Ok(squares);
         }
     }
 }
