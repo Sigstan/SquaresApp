@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using SquaresApp.Api.Infrastructure.Exceptions;
 using SquaresApp.Core.Services.Geometry;
 using SquaresApp.Core.Services.Geometry.Squares;
@@ -21,6 +22,9 @@ namespace SquaresApp.Api
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddControllers();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
             builder.Services.AddScoped<IPointsService, PointsService>();
             builder.Services.AddScoped<IGeometryService, SquareService>();
 
@@ -39,6 +43,12 @@ namespace SquaresApp.Api
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                    options.RoutePrefix = string.Empty;
+                });
             }
             else
             {
