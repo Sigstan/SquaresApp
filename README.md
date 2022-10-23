@@ -2,15 +2,15 @@
 Square App is designed to store and edit list of coordinates and identify squares from them.
 
 ## Prerequisites 
-.NET Core CLI
-MSSQL Server
+- .NET Core CLI
+- MSSQL Server
 
 ## Project structure
-SquaresApp.Api - API project.
-SquaresApp.Core - services project.
-SquaresApp.Models - shared models between projects.
-SquaresApp.Storage - EF entities, migrations, DbContext.
-SquaresApp.Tests -  unit tests project.
+- SquaresApp.Api - API project.
+- SquaresApp.Core - services project.
+- SquaresApp.Models - shared models between projects.
+- SquaresApp.Storage - EF entities, migrations, DbContext.
+- SquaresApp.Tests -  unit tests project.
 
 ## SwaggerUI
 SwaggerUI can be found https://localhost:<port>/
