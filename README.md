@@ -21,5 +21,6 @@ Database connection string is in appsettings.json {"ConnectionStrings":"DefaultC
 ## Project startup
 Database can be migrated from ```Package manage console```, or when ```SquaresApp.Api``` is launched.
 
-Open a terminal/command prompt and navigate to the folder in which you keep SquaresApp.Api project
-Write command ```dotnet run```
+### Startup
+- Open a terminal/command prompt and navigate to the folder in which you keep SquaresApp.Api project
+- Write command ```dotnet run```
